@@ -1,9 +1,9 @@
 # example data.frame
 df <- data.frame(a = 1:3,
-				 b = 4:6,
-				 c = 7:9,
-				 fname = c("f1.txt", "f2.txt", "f3.txt"),
-				 stringsAsFactors = FALSE)
+	b = 4:6,
+	c = 7:9,
+	fname = c("f1.txt", "f2.txt", "f3.txt"),
+	stringsAsFactors = FALSE)
 
 # > df
 #   a b c  fname
@@ -19,3 +19,4 @@ read_file <- function(fname) {
 library(dplyr)
 df %>% 
 	mutate(cc = read_file(.$fname))
+	# Nick, remember that fname here is the actual column name
