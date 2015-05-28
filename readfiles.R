@@ -17,7 +17,7 @@ read_file <- function(fname) {
 }
 
 library(dplyr)
-df %>%
+x <- df %>%
   rowwise()  %>%
 	mutate(cc = read_file(fname))
 	# Nick, remember that fname here is the actual column name
