@@ -2,7 +2,7 @@
 df <- data.frame(a = 1:3,
 	b = 4:6,
 	c = 7:9,
-	fname = c("f1.txt", "f2.txt", "f3.txt"),
+	fname = c("f1.txt", "f2.txt", "AlbanyNY-33bfaead062a6b0db17ab4c24f8924d2-01-Police-2.tua"),
 	stringsAsFactors = FALSE)
 
 # > df
@@ -17,6 +17,7 @@ read_file <- function(fname) {
 }
 
 library(dplyr)
-df %>% 
-	mutate(cc = read_file(.$fname))
+df %>%
+  rowwise()  %>%
+	mutate(cc = read_file(fname))
 	# Nick, remember that fname here is the actual column name
